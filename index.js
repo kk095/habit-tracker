@@ -5,7 +5,7 @@ const db = require("./config/mongoose");
 const session = require("express-session");
 const passport = require("passport");
 const passport_local = require("./config/passport_local");
-// const ENV = require("./environment");
+const ENV = require("./environment");
 const mongoStore = require("connect-mongo");
 
 // LOCAL PORT
@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, "assets")));
 app.use(
   session({
     name: "codial",
-    secret: "something",
+    secret: ENV.SECRATE_KEY,
     saveUninitialized: false,
     resave: false,
     cookie: {
@@ -29,8 +29,7 @@ app.use(
     },
     store: mongoStore.create(
       {
-        mongoUrl:
-          "mongodb+srv://kk095:Krishankant$095@cluster0.hoemh3q.mongodb.net/habitsTracker",
+        mongoUrl: ENV.DATABASE_URL,
         mongooseConnection: db,
         autoRemove: "disabled",
       },

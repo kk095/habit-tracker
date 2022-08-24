@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-// const ENV = require("../environment.js");
+const ENV = require("../environment.js");
 
 main()
   .then(() => {
@@ -10,7 +10,5 @@ main()
 
 async function main() {
   // CONNECTING MONGOOSE TO  OUR MONGODB DATABASE
-  await mongoose.connect(
-    "mongodb+srv://kk095:Krishankant$095@cluster0.hoemh3q.mongodb.net/habitsTracker"
-  );
+  await mongoose.connect(ENV.DATABASE_URL);
 }
