@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/login.css" />
+    <title>signup</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>WELCOME TO OUR COMMUNITY :)</h1>
+      <form action="/signup" method="post">
+        <input type="email" name="email" placeholder="Enter Your email" />
+        <input type="text" name="name" placeholder="Enter Your name" />
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter Your password"
+        />
+        <button type="submit">Create Account</button>
+      </form>
+      <div>Already have account ? <a href="/login">Goto Account</a></div>
+    </div>
+  </body>
+</html>

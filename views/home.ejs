@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+
+    <link rel="stylesheet" href="css/home.css" />
+    <script
+      src="https://kit.fontawesome.com/95749693e7.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- ---- container/wraper ---- -->
+    <div class="container">
+      <!-- ---- heading---- -->
+      <div class="heading">
+        <span>Habit Tracker</span>
+        <div class="gitImage" id="profile" href="#">
+          <img src="./img/pic.png" />
+          <span id="tooltip"><%=user.name%></span>
+        </div>
+        <a class="gitImage" href="/logout">
+          <img src="./img/logout.png" alt="no-img" />
+        </a>
+      </div>
+
+      <!-- ---- input section---- -->
+      <form action="/addHabit" method="POST">
+        <div class="takeInput">
+          <input
+            id="habitInput"
+            type="text"
+            name="habitName"
+            placeholder="Add habit?"
+            required
+          />
+          <input id="timeInput" type="time" name="time" required />
+          <button id="btn" type="submit">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+      </form>
+
+      <!-- ---- habits ---- -->
+      <ul>
+        <% if(allHabits.length == 0) { %>
+        <li class="warning">No habit in the bucket!</li>
+        <% } else {%> <% for (let i of allHabits) { %>
+        <li class="habitList">
+          <i class="fas fa-thumbtack nail"></i>
+          <a class="habit-name" href="/details/?id=<%= i.id %>">
+            <span> <%= i.name %> </span>
+          </a>
+          <span class="time"><%= i.time %></span>
+          <a class="del" href="/delete/?id=<%= i.id%>">
+            <i class="fas fa-trash-alt"></i>
+          </a>
+        </li>
+        <% } %> <% } %>
+      </ul>
+    </div>
+  </body>
+</html>

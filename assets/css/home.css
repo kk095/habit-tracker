@@ -1,0 +1,190 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(130, 50, 205);
+    
+}
+
+a{
+    color: inherit;
+}
+/* ---- heading ---- */
+.container{
+    width: 450px;
+    height: 550px;
+    margin: 30px auto;
+    box-shadow: 5px 5px 25px gray;
+    background-color: rgba(255, 0, 85, 0.852);
+}
+.heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color:#69A137;
+    border-radius: 4px;
+}
+.heading span{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: auto;
+    font-size: 3rem;
+    font-weight: 2rem;
+   font-family: fantasy;
+    /* border: 1px solid black; */
+}
+.gitImage{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 30px;
+    height:30px;
+    cursor: pointer;
+    position: relative;
+}
+#tooltip{
+    position: absolute;
+    bottom: -25px;
+    font-size: .8rem;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    padding: 2px 5px;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    display: none;
+}
+
+#profile:hover #tooltip{
+    display: block;
+}
+
+.gitImage img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+/* ---- input ---- */
+form{
+    margin-top: 10px;
+}
+.takeInput{
+    padding: 5px 5px 5px 10px;
+}
+
+#habitInput{
+    width: 250px;
+    height: 25px;
+    outline: none;
+    color: white;
+    font-size: 1.2rem;
+    background: none;
+    border: 2px solid white;
+}
+
+input::placeholder{
+    color: rgba(255,255,255,0.6)
+}
+
+#timeInput{
+    width: 100px;
+    height: 27px;
+    outline: none;
+    background: none;
+    border: 2px solid white;
+}
+#btn{
+    width: 50px;
+    height: 30px;
+    background-color:#69A137;
+}
+#btn i{
+    color: white;
+}
+#btn:hover{
+    cursor: pointer;
+}
+/* ---- display habit ---- */
+ul{
+    list-style: none;
+    padding: 0;
+    height: 400px;
+    overflow-y: auto;
+}
+.habitList{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 430px;
+    color: white;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    /* background-color: rgba(255,255,255,1); */
+    /* box-shadow: 0px 0px 5px 0px grey; */
+}
+
+.nail{
+    display: flex;
+    flex-direction: row;
+    width: 10%;
+    font-size: 20px;
+    padding: 5px 5px 5px 5px;
+}
+.habit-name{
+    display: flex;
+    flex-direction: row;
+    width: 65%;
+    text-decoration: none;
+    overflow: hidden;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+.habit-name span{
+    font-size: 25px;
+    padding: 5px 5px 5px 5px;
+    
+}
+.habitList:hover{
+    background-color: white;
+    color: black;
+    box-shadow: 0px 0px 5px 0px gray;   
+}
+.time{
+    display: flex;
+    flex-direction: row;
+    width: 20%;
+    padding: 5px 5px 5px 5px;
+    
+    font-size: 20px;
+    
+}
+.del{
+    display: flex;
+    flex-direction: row;
+    width: 10%;
+    justify-content: flex-end;
+    padding: 5px 5px 5px 5px;
+    
+}
+.del:hover{
+    color: red;
+}
+.warning{
+    /* padding: 5px 5px 5px 5px; */
+    text-align: center;
+    color: red;
+}
+
+@media screen and (max-width:450px) {
+    .container{
+        width: 95%;
+        height: 90%;
+    }
+    .container li{
+        width: 95%;
+    }
+}
