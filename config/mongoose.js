@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const ENV = require("../environment.js");
+// const ENV = require("../environment.js");
 
 main()
   .then(() => {
