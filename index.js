@@ -5,7 +5,7 @@ const db = require("./config/mongoose");
 const session = require("express-session");
 const passport = require("passport");
 const passport_local = require("./config/passport_local");
-const ENV = require("./environment");
+// const ENV = require("./environment");
 const mongoStore = require("connect-mongo");
 
 // LOCAL PORT
