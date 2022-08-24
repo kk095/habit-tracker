@@ -10,5 +10,7 @@ main()
 
 async function main() {
   // CONNECTING MONGOOSE TO  OUR MONGODB DATABASE
-  await mongoose.connect(ENV.DATABASE_URL || process.env.DATABASE_URL);
+  await mongoose.connect(
+    "mongodb+srv://kk095:Krishankant$095@cluster0.hoemh3q.mongodb.net/habitsTracker"
+  );
 }

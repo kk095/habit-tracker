@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, "assets")));
 app.use(
   session({
     name: "codial",
-    secret: ENV.SECRATE_KEY || process.env.SECRATE_KEY,
+    secret: "something",
     saveUninitialized: false,
     resave: false,
     cookie: {
@@ -29,7 +29,8 @@ app.use(
     },
     store: mongoStore.create(
       {
-        mongoUrl: ENV.DATABASE_URL || process.env.DATABASE_URL,
+        mongoUrl:
+          "mongodb+srv://kk095:Krishankant$095@cluster0.hoemh3q.mongodb.net/habitsTracker",
         mongooseConnection: db,
         autoRemove: "disabled",
       },
@@ -53,7 +54,7 @@ app.set("view engine", "ejs");
 app.set("views", "views");
 
 // TO LISTEN OUR APP TO LOCAL PORT
-app.listen(process.env.PORT || PORT, function (err) {
+app.listen(process.env.PORT, function (err) {
   if (err) {
     console.log(err);
     return;
