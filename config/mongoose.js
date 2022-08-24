@@ -10,5 +10,5 @@ main()
 
 async function main() {
   // CONNECTING MONGOOSE TO  OUR MONGODB DATABASE
-  await mongoose.connect(ENV.DATABASE_URL);
+  await mongoose.connect(ENV.DATABASE_URL || process.env.DATABASE_URL);
 }

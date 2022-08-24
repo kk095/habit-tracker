@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, "assets")));
 app.use(
   session({
     name: "codial",
-    secret: ENV.SECRATE_KEY,
+    secret: ENV.SECRATE_KEY || process.env.SECRATE_KEY,
     saveUninitialized: false,
     resave: false,
     cookie: {
@@ -29,7 +29,7 @@ app.use(
     },
     store: mongoStore.create(
       {
-        mongoUrl: ENV.DATABASE_URL,
+        mongoUrl: ENV.DATABASE_URL || process.env.DATABASE_URL,
         mongooseConnection: db,
         autoRemove: "disabled",
       },
